@@ -1,13 +1,15 @@
 package hmm.what.happened;
 
-public class Goat extends Animal {
-    public Goat(int numberOfLegs) {
-        super(numberOfLegs);
+public class Goat implements Introducer, LegNumberer {
+
+    @Override
+    public void introduce(){
+        String message = "Im goat, having " + getLegNumber() + " legs";
+        System.out.println(message);
     }
 
     @Override
-    public void sayWhoIam(){
-        String message = "Im goat, having " + numberOfLegs + " legs";
-        System.out.println(message);
+    public int getLegNumber(){
+        return 5;
     }
 }
